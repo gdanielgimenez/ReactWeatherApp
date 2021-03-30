@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Search from './Search';
-import {Container, Typography} from '@material-ui/core'
+import {Container, Typography} from '@material-ui/core';
+import greenForest from './images/greenForest.jpg';
+import nightForest from './images/nightForest.jpg';
+import {withStyles} from '@material-ui/core/styles';
+import Parent from './Parent';
+import NavBar from './NavBar';
+const styles = theme =>({
+    conte:{
+      backgroundImage:`url(${nightForest})`,
+      //height: 1356,
+    }
+})
 class App extends Component{
   state ={
     weather:{
@@ -18,7 +29,6 @@ class App extends Component{
       console.log(this.state.weather);
     })
   }
-
 //function Storm
 storm = (name) => {
   axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${name}&units=metric&APPID=83887d83799dc9b74bffffc1b572c8a0`)
@@ -30,13 +40,16 @@ storm = (name) => {
     })
 }
   render() {
+    const {classes, theme}= this.props
     return (
-      <Container align="center">
-        <Typography variant="h1" color="textSecondary"> weather app</Typography>
+      <Parent>
+        <NavBar />
+      <Container align="center" >
           <Search  weather={this.state.weather} storm={this.storm}/>
       </Container>
+      </Parent>
     );
   }
 }
 
-export default App;
+export default withStyles(styles, {withTheme:true}) (App);

@@ -1,12 +1,25 @@
 import React, { Component } from 'react'
 import TextField from '@material-ui/core/TextField';
 import { Button, Card, CardContent, CardHeader, Container, Typography, Grid } from '@material-ui/core';
-import {withStyles} from '@material-ui/core/styles';
+import {withStyles, fade} from '@material-ui/core/styles';
 
 const styles = theme =>({
+    title:{
+    color:"cornsilk",
+    fontWeight:"bold",
+    paddingTop:"75px",
+    paddingBottom:"15px"
+    },
     root: {
       maxWidth: 345,
-      background:"snow"
+      background:"snow",
+      borderRadius:"25px"
+    },
+    outlinedRoot :{
+        backgroundColor: fade(theme.palette.common.white, 0.15),
+        '&:hover': {
+            backgroundColor: "azure",
+        }
     },
       media: {
         heigh:10,
@@ -34,8 +47,8 @@ class Search extends Component{
         //destructuring props
         const {weather, storm,classes,theme} = this.props
         const displayWeather = 
-        <Grid item xs={6} className={classes.root}>
-            <Card variant="outlined">
+        <Grid item xs={6}>
+            <Card variant="outlined" className={classes.root}>
                 <CardHeader title={weather.description} subheader={weather.name}/>
                 <CardContent>
                     <Typography variant="subtitle1"> Temp : {weather.temp} °C</Typography>
@@ -47,15 +60,16 @@ class Search extends Component{
         </Grid>    
         return(
             <div>
-                <Container>
-                    <Typography variant="h2" color="primary">Weather information</Typography>
-                    <TextField required onChange={this.handleChange}
+                <Container spacing={6}>
+                <Typography variant="h5" className={classes.title}>Get the current weather on any Location</Typography>
+                    <TextField required onChange={this.handleChange} inputProps={{className:classes.outlinedRoot}} 
                         id="textSearch"
-                        label="Enter your Location"
+                        label="Enter your Location (city) "
                         type="search"
                         value={this.state.location}
                         margin="normal"
                         variant="outlined"
+                        
                     /><br/>
                     <Button onClick={this.handleSubmit}  variant="contained" color="primary">
                         submit
