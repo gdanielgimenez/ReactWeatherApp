@@ -62,23 +62,18 @@ class Search extends Component{
     render(){
         //destructuring props
         const {weather, storm,classes,theme} = this.props
-        //----------------------------
-        const defaults = {
-    
-            icon: 'PARTLY_CLOUDY_NIGHT',
-            color: 'lightblue',
+        let defaults = {
             size: 100,
             animate: true
-          };
-          //---------------
+        }
         const displayWeather = 
         <Grid item xs={12}>
             <Card variant="outlined" className={classes.root}>
                 <CardHeader title={weather.name +" "+ weather.country}  subheader={weather.description}/>
                 <CardMedia className={classes.media}> 
                 <ReactAnimatedWeather
-                      icon='PARTLY_CLOUDY_NIGHT'
-                      color={defaults.color}
+                      icon={this.props.weather.icon}
+                      color={this.props.weather.color}
                       size={defaults.size}
                       animate={defaults.animate}
                 />
@@ -90,14 +85,14 @@ class Search extends Component{
                     <Typography variant="subtitle1"> Humidity : <CountUp  end={weather.humidity} duration={6}/>  %</Typography>
                     <Typography variant="subtitle1" > sunrise : {weather.sunriseLocal} <BrightnessHighIcon/> </Typography>
                     <Typography variant="subtitle1">  Sunset : {weather.sunsetLocal}   <Brightness2Icon fontSize="small"/></Typography>
-                    <Typography variant="subtitle1" >  location time :  {weather.localTime} </Typography>
+                    <Typography variant="subtitle2" >  current time in {weather.name} :  {weather.localTime} </Typography>
                 </CardContent>
             </Card>
         </Grid>    
         return(
             <div>
                 <Container  xs={12}>
-                <Typography variant="h5" className={classes.title}>Get the current weather on any Location</Typography>
+                <Typography variant="h5" className={classes.title}>Get the current weather on any city</Typography>
                     <TextField required onChange={this.handleChange} inputProps={{className:classes.outlinedRoot}} 
                         id="textSearch"
                         label="Enter location"
