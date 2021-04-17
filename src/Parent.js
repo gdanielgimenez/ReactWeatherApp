@@ -1,7 +1,4 @@
 import React from 'react'
-import greenForest from './images/greenForest.jpg';
-import nightForest from './images/nightForest.jpg';
-import auroraForest from './images/auroraForest.jpg';
 import skyHigh from './images/skyHigh.jpg';
 
 const Parent = (props) =>{
@@ -10,10 +7,11 @@ const Parent = (props) =>{
             backgroundImage: `url(${skyHigh})`,
             backgroundRepeat:'no-repeat',
             backgroundSize: 'cover',
-            backgroundPosition:' top center',
+            backgroundPosition:'center top',
             backgroundAttachment:'fixed',
-            //maxwidth:'767px',
+            width:"100%",
             height:"800px",
+            margin:"0"
 
         }}>
             {props.children}

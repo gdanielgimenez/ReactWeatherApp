@@ -1,61 +1,27 @@
-import React, { Component } from 'react'
+import React, {useState} from 'react';
+import useStyles from './style';
 import TextField from '@material-ui/core/TextField';
 import { Button, Card, CardContent, CardHeader, Container, Typography, Grid, CardMedia } from '@material-ui/core';
-import {withStyles, fade} from '@material-ui/core/styles';
 import Brightness2Icon from '@material-ui/icons/Brightness2';
 import BrightnessHighIcon from '@material-ui/icons/BrightnessHigh';
 import ReactAnimatedWeather from 'react-animated-weather';
 import CountUp from 'react-countup';
 
-
-const styles = theme =>({
-    title:{
-    color:"snow",
-    fontWeight:"bold",
-    paddingTop:"50px",
-    paddingBottom:"15px"
-    },
-    root: {
-      maxWidth: 250,
-      background:"snow",
-      borderRadius:"25px",
-    },
-    outlinedRoot :{
-        backgroundColor: fade(theme.palette.common.white, 0.15),
-        '&:hover': {
-            backgroundColor: "azure",
+const SearchTwo = ({weather, storm}) =>{
+//set the state with hooks
+    const [location,setLocation] = useState('')
+//-------------------------------------------------
+    const classes = useStyles();
+//functions---------------------------------------------------------------------------
+        const handleSubmit = (e) =>{
+            e.preventDefault();
+            storm(location)
+            setLocation('')
         }
-    },
-    button:{
-        backgroundColor:"royalblue",
-        '&:hover': {
-            backgroundColor: "lightblue",
+        const handleChange = (e)=>{
+            setLocation(document.getElementById("textSearch").value)
         }
-    },
-    text:{
-        color:"snow"
-    },
-      media: {
-        height:100,
-      }
-})
-
-class Search extends Component{
-    state ={
-        location :''
-    }
-    //functions---------------------------------------------------------------------------
-    handleSubmit = (e) =>{
-        e.preventDefault();
-        this.props.storm(this.state.location)
-        this.setState({location:''})
-    }
-    handleChange = (e)=>{
-        this.setState({location:document.getElementById("textSearch").value})
-    }
-    render(){
-        //destructuring props from appjs
-        const {weather, storm,classes,theme} = this.props
+//--------------------------------------------------------------------------------
         let defaults = {
             size: 100,
             animate: true
@@ -87,15 +53,15 @@ class Search extends Component{
             <div>
                 <Container  xs={12}>
                 <Typography variant="h5" className={classes.title}>Get the current weather on any city</Typography>
-                    <TextField required onChange={this.handleChange} inputProps={{className:classes.outlinedRoot}} 
+                    <TextField required onChange={handleChange} inputProps={{className:classes.outlinedRoot}} 
                         id="textSearch"
                         label="Enter location"
                         type="search"
-                        value={this.state.location}
+                        value={location}
                         margin="normal"
                         variant="outlined"       
                     /><br/>
-                    <Button onClick={this.handleSubmit} variant="contained" className={classes.button}  >
+                    <Button onClick={handleSubmit} variant="contained" className={classes.button}  >
                        <Typography className={classes.text}> submit</Typography> 
                     </Button>
                 </Container><br/>
@@ -104,6 +70,5 @@ class Search extends Component{
                 </Grid>
             </div>
         )
-    }
 }
-export default withStyles(styles,{withTheme:true}) (Search);
+export default SearchTwo;
