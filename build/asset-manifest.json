@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6e938193.chunk.css",
+    "main.js": "/static/js/main.a2d74652.chunk.js",
+    "main.js.map": "/static/js/main.a2d74652.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.4da1d6ee.js",
+    "runtime-main.js.map": "/static/js/runtime-main.4da1d6ee.js.map",
+    "static/js/2.9aa77a46.chunk.js": "/static/js/2.9aa77a46.chunk.js",
+    "static/js/2.9aa77a46.chunk.js.map": "/static/js/2.9aa77a46.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.6e938193.chunk.css.map": "/static/css/main.6e938193.chunk.css.map",
+    "static/js/2.9aa77a46.chunk.js.LICENSE.txt": "/static/js/2.9aa77a46.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/static/media/skyHigh.52135992.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4da1d6ee.js",
+    "static/js/2.9aa77a46.chunk.js",
+    "static/css/main.6e938193.chunk.css",
+    "static/js/main.a2d74652.chunk.js"
+  ]
+}
