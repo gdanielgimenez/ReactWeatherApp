@@ -66,7 +66,7 @@ const SearchTwo = ({weather, storm}) =>{
                     </Button>
                 </Container><br/>
                 <Grid  align="center"  >
-                {displayWeather}
+                    {displayWeather}
                 </Grid>
             </div>
         )
