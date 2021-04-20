@@ -15,8 +15,9 @@ class App extends Component{
       let DefaultLocation = "London";
       axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${DefaultLocation}&units=metric&APPID=83887d83799dc9b74bffffc1b572c8a0`)
       .then( res =>{
-            this.setState({weather:{ name:res.data.name,temp:res.data.main.temp, max:res.data.main.temp_max, min:res.data.main.temp_min, humidity:res.data.main.humidity, description:res.data.weather.[0].description,main:res.data.weather.[0].main,country:res.data.sys.country,sunrise:new Date(res.data.sys.sunrise*1000),sunset:new Date(res.data.sys.sunset*1000),lt:new Date(),timeZone:(res.data.timezone/60)/60}    
-                    })
+            this.setState({weather:{ name:res.data.name,temp:res.data.main.temp, max:res.data.main.temp_max, min:res.data.main.temp_min, humidity:res.data.main.humidity, description:res.data.weather.[0].description,main:res.data.weather.[0].main,country:res.data.sys.country,sunrise:new Date(res.data.sys.sunrise*1000),sunset:new Date(res.data.sys.sunset*1000),lt:new Date(),timeZone:(res.data.timezone/60)/60}            
+          })
+          console.log(this.state);
       this.handleTime(this.state.weather.sunrise,this.state.weather.timeZone,this.state.weather.sunset,this.state.weather.lt,this.state.weather.main)
     })
   }
@@ -160,6 +161,18 @@ handleTime= (time,dif,sunset,localTime,main) =>{
           case "Drizzle night":
             defaults = {
             icon: 'SLEET',
+            color: 'lightblue'
+          }  
+          break;
+          case "Haze day" :
+            defaults = {
+            icon: 'FOG',
+            color: 'lightgray'
+          }  
+          break;
+          case "Haze night":
+            defaults = {
+            icon: 'FOG',
             color: 'lightblue'
           }  
           break;
