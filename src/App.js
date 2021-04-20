@@ -17,7 +17,6 @@ class App extends Component{
       .then( res =>{
             this.setState({weather:{ name:res.data.name,temp:res.data.main.temp, max:res.data.main.temp_max, min:res.data.main.temp_min, humidity:res.data.main.humidity, description:res.data.weather.[0].description,main:res.data.weather.[0].main,country:res.data.sys.country,sunrise:new Date(res.data.sys.sunrise*1000),sunset:new Date(res.data.sys.sunset*1000),lt:new Date(),timeZone:(res.data.timezone/60)/60}            
           })
-          console.log(this.state);
       this.handleTime(this.state.weather.sunrise,this.state.weather.timeZone,this.state.weather.sunset,this.state.weather.lt,this.state.weather.main)
     })
   }
