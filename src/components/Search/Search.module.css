@@ -1,0 +1,30 @@
+.title {
+  color: snow !important;
+  font-weight: bold !important;
+  padding-top: 50px !important;
+  padding-bottom: 15px !important;
+}
+.root {
+  max-width: 250px !important;
+  background: snow !important;
+  border-radius: 25px !important;
+}
+.outlinedRoot {
+  background-color: rg(255, 255, 255) !important;
+}
+.outlinedRoot:hover {
+  color: azure !important;
+}
+.button {
+  background-color: royalblue !important;
+  color: white !important;
+}
+.button:hover {
+  background-color: lightblue !important;
+}
+.text {
+  color: "snow" !important;
+}
+.media {
+  height: 100px !important;
+}

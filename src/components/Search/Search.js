@@ -1,17 +1,16 @@
 import React, {useState} from 'react';
-import useStyles from './style';
 import TextField from '@material-ui/core/TextField';
 import { Button, Card, CardContent, CardHeader, Container, Typography, Grid, CardMedia } from '@material-ui/core';
 import Brightness2Icon from '@material-ui/icons/Brightness2';
 import BrightnessHighIcon from '@material-ui/icons/BrightnessHigh';
 import ReactAnimatedWeather from 'react-animated-weather';
 import CountUp from 'react-countup';
+import styles from './Search.module.css';
 
-const SearchTwo = ({weather, storm}) =>{
+const Search = ({weather, storm}) =>{
 //set the state with hooks
     const [location,setLocation] = useState('')
 //-------------------------------------------------
-    const classes = useStyles();
 //functions---------------------------------------------------------------------------
         const handleSubmit = (e) =>{
             e.preventDefault();
@@ -28,9 +27,9 @@ const SearchTwo = ({weather, storm}) =>{
         }
         const displayWeather = 
         <Grid item xs={12}>
-            <Card variant="outlined" className={classes.root}>
+            <Card variant="outlined" className={styles.root}>
                 <CardHeader title={weather.name +" "+ weather.country}  subheader={weather.description}/>
-                <CardMedia className={classes.media}> 
+                <CardMedia className={styles.media}> 
                 <ReactAnimatedWeather
                       icon={weather.icon}
                       color={weather.color}
@@ -52,18 +51,20 @@ const SearchTwo = ({weather, storm}) =>{
         return(
             <div>
                 <Container  xs={12}>
-                <Typography variant="h5" className={classes.title}>Get the current weather on any city</Typography>
-                    <TextField required onChange={handleChange} inputProps={{className:classes.outlinedRoot}} 
-                        id="textSearch"
-                        label="Enter location"
-                        type="search"
-                        value={location}
-                        margin="normal"
-                        variant="outlined"       
-                    /><br/>
-                    <Button onClick={handleSubmit} variant="contained" className={classes.button}  >
-                       <Typography className={classes.text}> submit</Typography> 
-                    </Button>
+                <Typography variant="h5" className={styles.title}>Get the current weather on any city</Typography>
+                   <form onSubmit={handleSubmit} >
+                    <TextField  required onChange={handleChange} className={styles.outlinedRoot}  
+                            id="textSearch"
+                            label="Enter location"
+                            type="input"
+                            value={location}
+                            margin="normal"
+                            variant="outlined"       
+                        /><br/>
+                        <Button type="submit" variant="contained" className={styles.button}  >
+                        <Typography className={styles.text}> submit</Typography> 
+                        </Button>
+                   </form>
                 </Container><br/>
                 <Grid  align="center"  >
                     {displayWeather}
@@ -71,4 +72,4 @@ const SearchTwo = ({weather, storm}) =>{
             </div>
         )
 }
-export default SearchTwo;
+export default Search;
