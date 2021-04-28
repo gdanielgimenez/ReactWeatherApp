@@ -4,6 +4,9 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
+//for the local time
+// <Typography variant="subtitle2" > time in {weather.name} :  {weather.localTime} </Typography>
+//need to pass the weather object first
 const NavBar = () => {
   return (
     <div className={styles.root}>  

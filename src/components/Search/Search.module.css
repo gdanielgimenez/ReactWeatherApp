@@ -5,14 +5,20 @@
   padding-bottom: 15px !important;
 }
 .root {
-  max-width: 250px !important;
-  background: snow !important;
+  max-width: 775px;
+  min-height: 200px !important;
+  background: snow;
   border-radius: 25px !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border-bottom: lightblue solid 10px;
+  padding: 25px;
 }
-.outlinedRoot {
-  background-color: rg(255, 255, 255) !important;
-}
-.outlinedRoot:hover {
+/*.outlinedRoot {
+   background-color: rgb(255, 255, 255) !important;
+}*/
+.outlinedRoot:focus {
   color: azure !important;
 }
 .button {
@@ -25,6 +31,19 @@
 .text {
   color: "snow" !important;
 }
-.media {
-  height: 100px !important;
+.icons {
+  align-self: center;
+  color: rgba(0, 150, 250, 0.5);
+}
+.cardTitle {
+  /* color: rgba(0, 150, 255, 0.5);*/
+  color: rgba(0, 150, 255, 0.5);
+  font-weight: bold;
+  font-size: 28px !important;
+  padding-top: 15%;
+  align-self: center;
+}
+.data {
+  color: rgba(0, 150, 255, 0.5);
+  align-self: center;
 }

@@ -1,12 +1,13 @@
 export { default as Search } from './Search/Search';
 export { default as NavBar } from './NavBar/NavBar';
+export { default as Cards } from './Cards/Cards';
 
 export const handleTime = (time,dif,sunset,localTime,main,weatherState) => {
   let difer= Number(dif)
   sunset.setHours(sunset.getHours()+ difer)
-  let sunyBoi = sunset.toGMTString().slice(16,25)
+  let sunyBoi = sunset.toGMTString().slice(16,22)
   time.setHours(time.getHours() + difer)
-  let sunSun = time.toGMTString().slice(16,25)
+  let sunSun = time.toGMTString().slice(16,22)
   let weather = weatherState
   localTime.setHours(localTime.getHours() + difer)
   let finalTime = localTime.toGMTString().slice(16,22)
