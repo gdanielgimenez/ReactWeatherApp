@@ -1,8 +1,8 @@
 .title {
   color: snow !important;
   font-weight: bold !important;
-  padding-top: 50px !important;
-  padding-bottom: 15px !important;
+  padding-top: 10px !important;
+  padding-bottom: 5px !important;
 }
 .root {
   max-width: 775px;
@@ -15,18 +15,24 @@
   border-bottom: lightblue solid 10px;
   padding: 25px;
 }
-/*.outlinedRoot {
-   background-color: rgb(255, 255, 255) !important;
-}*/
+.outlinedRoot {
+  border-radius: 20px !important;
+  width: 300px;
+}
 .outlinedRoot:focus {
   color: azure !important;
 }
 .button {
-  background-color: royalblue !important;
+  background-color: rgba(0, 150, 250, 0.5) !important;
   color: white !important;
+  height: 50px;
+  width: 100px;
+  align-self: center;
+  margin-left: 10px !important;
+  border-radius: 10px !important;
 }
 .button:hover {
-  background-color: lightblue !important;
+  background-color: royalblue !important;
 }
 .text {
   color: "snow" !important;
@@ -46,4 +52,9 @@
 .data {
   color: rgba(0, 150, 255, 0.5);
   align-self: center;
+}
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

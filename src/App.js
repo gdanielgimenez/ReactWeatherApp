@@ -34,8 +34,8 @@ storm  =  async (name) => {
   render() {
     const { weather, foreCast } = this.state;
     return (
-      <div >
-        <NavBar />
+      <div className="container">
+        <NavBar weather={weather} />
         <Container align="center" >
             <Search  weather={weather} storm={this.storm}/>
             <Cards weather={weather} foreCast={foreCast}/>

@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import TextField from '@material-ui/core/TextField';
-import { Button, Card, CardContent, CardHeader, Container, Typography, Grid, CardMedia } from '@material-ui/core';
+import { Button, Card, CardContent, CardHeader, Container, Typography, Grid, CardMedia, FormControl } from '@material-ui/core';
 import Brightness2Icon from '@material-ui/icons/Brightness2';
 import BrightnessHighIcon from '@material-ui/icons/BrightnessHigh';
 import ReactAnimatedWeather from 'react-animated-weather';
 import CountUp from 'react-countup';
 import styles from './Search.module.css';
+import PublicIcon from '@material-ui/icons/Public';
+
 
 const Search = ({weather, storm}) =>{
 //set the state with hooks
@@ -48,10 +50,10 @@ const Search = ({weather, storm}) =>{
             </Card>*/
             <Grid xs={9}  className={styles.root} >
                       
-                     <Grid item  xs={3}>
+                     <Grid item  xs={12} md={3}>
                         <Typography className={styles.cardTitle} variant="h6">{weather.name} <Typography variant="body1">{weather.country}</Typography><Typography variant="h6"> {weather.description}</Typography></Typography>
                     </Grid> 
-                    <Grid item xs={3} className={styles.icons}> 
+                    <Grid item xs={12} md={3} className={styles.icons}> 
                         <Typography variant="h5"> <CountUp end={Number(weather.temp)} decimals={1} duration={6} /> °C</Typography>
                         <ReactAnimatedWeather
                                 icon={weather.icon}
@@ -60,7 +62,7 @@ const Search = ({weather, storm}) =>{
                                 animate={defaults.animate}
                         />
                     </Grid>
-                    <Grid item xs={3} className={styles.data}>
+                    <Grid item xs={12} md={3} className={styles.data}>
                             <Typography variant="subtitle1"> Max : <CountUp end={Number(weather.max)} decimals={1} duration={6}/> °C</Typography>
                             <Typography variant="subtitle1"> Min : <CountUp end={Number(weather.min)} decimals={1} duration={6}/> °C</Typography>
                             <Typography variant="subtitle1"> Humidity : <CountUp  end={Number(weather.humidity)} duration={6}/>  %</Typography>
@@ -73,20 +75,21 @@ const Search = ({weather, storm}) =>{
             <div>
                 <Container  xs={12} >
                 <Typography variant="h5" className={styles.title}>Get the current weather on any city</Typography>
-                   <form onSubmit={handleSubmit} >
+                   <form  className={styles.form} onSubmit={handleSubmit} >
+                    
                     <TextField  required onChange={handleChange} className={styles.outlinedRoot}  
                             id="textSearch"
                             label="Enter location"
                             type="input"
                             value={location}
                             margin="normal"
-                            variant="outlined"       
-                        /><br/>
+                        />
                         <Button type="submit" variant="contained" className={styles.button}  >
                         <Typography className={styles.text}> submit</Typography> 
                         </Button>
-                   </form>
-                </Container><br/>
+                        </form>
+                    </Container>
+
                 <div>
                     {displayWeather}
                 </div>

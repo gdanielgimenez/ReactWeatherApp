@@ -1,11 +1,9 @@
-.root {
-  flex-grow: 1px;
-}
-/*.menuButton {
-   margin-right: theme.spacing(2);
-}*/
 .title {
-  flex-grow: 1;
-  color: snow;
-  font-weight: bold !important;
+  color: snow !important;
+  margin-left: 10px !important;
+}
+.header {
+  /* background: rgba(50, 75, 155, 0.5); */
+  /* background: rgba(75, 104, 141, 0.5);*/
+  padding: 0px;
 }

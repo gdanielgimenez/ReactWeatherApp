@@ -20,6 +20,8 @@ export const handleTime = (time,dif,sunset,localTime,main,weatherState) => {
   let tod = Tod();
   weather.sunriseLocal = sunSun
   weather.sunsetLocal = sunyBoi
+  weather.localDay = localTime.getDay()
+  weather.localDate = localTime.toGMTString().slice(0,16)
   weather.localTime = finalTime
   weather.Tod = tod
     let weatherIcons = (wd,timeOfDay) =>{
