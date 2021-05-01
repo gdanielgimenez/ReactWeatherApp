@@ -7,3 +7,12 @@
   /* background: rgba(75, 104, 141, 0.5);*/
   padding: 0px;
 }
+@media (max-width: 650px) {
+  .header {
+    margin-bottom: 35px;
+    align-items: center !important;
+  }
+  .title {
+    margin-left: 25% !important;
+  }
+}

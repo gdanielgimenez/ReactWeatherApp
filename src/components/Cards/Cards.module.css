@@ -64,7 +64,7 @@
   font-size: 45px !important;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 960px) {
   .gridCont {
     height: 100%;
     width: 75% !important;
