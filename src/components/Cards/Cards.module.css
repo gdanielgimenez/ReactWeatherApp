@@ -1,0 +1,53 @@
+.cardStyle {
+  height: 150px;
+  max-width: 200px;
+  padding: 25px;
+  background-color: rgba(0, 155, 255, 0.5) !important;
+}
+.item {
+  align-self: center !important;
+}
+.gridCont {
+  margin-top: 15px !important;
+  height: 275px;
+  max-width: 955px !important;
+  background-color: white;
+  border-radius: 25px !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border-bottom: rgba(0, 155, 255, 0.5) solid 5px;
+  padding: 20px;
+}
+.title {
+  /*  color: rgba(0, 155, 250, 1);*/
+  /*color: rgba(0, 155, 250, 0.75);*/
+  color: white;
+  font-weight: bold !important;
+}
+.media {
+  height: 75px;
+}
+.grades {
+  color: snow;
+}
+.App {
+  width: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App {
+    animation: App-fade 4.5s linear;
+  }
+}
+@keyframes App-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.chart {
+  font-size: 45px !important;
+}
