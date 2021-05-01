@@ -18,7 +18,7 @@ const Cards = ({weather, foreCast}) =>{
             foreCast ? ( 
                 foreCast.dataWeek.slice(0,6).map((weeky,i)  =>{
                     return (
-                            <Grid item className={styles.item} xs={12} sm={6} md={2} key={i} >
+                            <Grid item className={styles.item} xs={12}  md={2} key={i} >
                                 <Card className={styles.cardStyle} variant="elevation">
                                 <Typography className={styles.title}>  {daysOfWeek[(day+i)>6 ? ((day+i)-7):(day+i)]} </Typography>
                                     <Typography variant="h5"  className={styles.grades}> {String(weeky.max).slice(0,2)} °C </Typography>
@@ -60,7 +60,7 @@ const Cards = ({weather, foreCast}) =>{
                     </Grid>
             </div>
             <div onClick={handleClick}  >
-                <Grid title="click to get week forecast" className={styles.gridCont}>
+                <Grid title="click to get week forecast" className={styles.gridChart}>
                     {Chart}
                 </Grid>
             </div>
