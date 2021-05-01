@@ -73,7 +73,7 @@ const Search = ({weather, storm}) =>{
             </Grid>      
         return(
             <div>
-                <Container  xs={12} >
+                <Container  >
                 <Typography variant="h5" className={styles.title}>Get the current weather on any city</Typography>
                    <form  className={styles.form} onSubmit={handleSubmit} >
                     
