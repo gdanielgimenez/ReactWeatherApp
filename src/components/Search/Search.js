@@ -23,11 +23,15 @@ const Search = ({weather, storm}) =>{
             setLocation(document.getElementById("textSearch").value)
         }
 //--------------------------------------------------------------------------------
+    if(!weather){
+        return "loading";
+    } 
+
         let defaults = {
             size: 125,
             animate: true
         }
-        const displayWeather = 
+      const displayWeather =  
     /*        
             <Card variant="elevation" className={styles.root} >         
                         <Typography className={styles.cardTitle} variant="h6">{weather.name} <Typography variant="body1">{weather.country}</Typography><Typography variant="h6"> {weather.description}</Typography></Typography>
@@ -47,8 +51,11 @@ const Search = ({weather, storm}) =>{
                             <Typography variant="subtitle1" > Sunrise : {weather.sunriseLocal} <BrightnessHighIcon/> </Typography>
                             <Typography variant="subtitle1">  Sunset : {weather.sunsetLocal}   <Brightness2Icon fontSize="small"/></Typography>
                         </CardContent>   
-            </Card>*/
-            <Grid xs={9}  className={styles.root} >
+            </Card>*/ 
+            
+        
+                
+                <Grid xs={9}  className={styles.root} >
                       
                      <Grid item  xs={12} md={3}>
                         <Typography className={styles.cardTitle} variant="h6">{weather.name} <Typography variant="body1">{weather.country}</Typography><Typography variant="h6"> {weather.description}</Typography></Typography>
@@ -70,7 +77,10 @@ const Search = ({weather, storm}) =>{
                             <Typography variant="subtitle1">  Sunset : {weather.sunsetLocal}   <Brightness2Icon fontSize="small"/></Typography>
                                             
                     </Grid>   
-            </Grid>      
+            </Grid>
+        if(!weather){
+            return "loading";
+        }          
         return(
             <div>
                 <Container  >
@@ -90,7 +100,7 @@ const Search = ({weather, storm}) =>{
                         </form>
                     </Container>
 
-                <div>
+                <div> 
                     {displayWeather}
                 </div>
             </div>

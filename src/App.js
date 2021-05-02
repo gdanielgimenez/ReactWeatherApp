@@ -8,8 +8,8 @@ import './App.module.css';
 
 class App extends Component{
   state = {
-    weather:{
-     name:'',temp:'', max:'', min:'', humidity:'', description:'',main:'',country:'',sunrise:'',sunset:'',lt:new Date(),timeZone:'',defaults:''
+  weather:{
+    name:'',temp:'', max:'', min:'', humidity:'', description:'',main:'',country:'',sunrise:'',sunset:'',lt:new Date(),timeZone:'',defaults:''
     },
    // foreCast:[{dataWeek:[''], hourly:['']}]
   }

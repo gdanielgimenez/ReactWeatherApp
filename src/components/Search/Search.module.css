@@ -63,3 +63,16 @@
     display: grid;
   }
 }
+@media (prefers-reduced-motion: no-preference) {
+  .root {
+    animation: root-fade 2.5s linear;
+  }
+}
+@keyframes root-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
