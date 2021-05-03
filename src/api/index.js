@@ -28,6 +28,7 @@ export const fetchData = async () => {
         return simplifiedData;
         } catch(error){
         console.log(error);
+    
     }
 }
     export const fetchWeeklyData = async (lat,lon) => {
@@ -46,6 +47,7 @@ export const fetchData = async () => {
                     return ({dataWeek,hourlyData});
                     } catch(error){
                     console.log(error)
+                   
                     }
                 }   
 
@@ -74,6 +76,7 @@ export const fetchLocation = async (city) => {
     return simplifiedData;
     } catch(error){
         console.log(error)
+        
     }
 } 
 
