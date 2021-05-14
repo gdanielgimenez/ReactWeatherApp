@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import ReactCardFlip from 'react-card-flip';
-import { Button, Card, CardContent, CardHeader, Container, Typography, Grid, CardMedia } from '@material-ui/core';
+import { Card, Typography, Grid, CardMedia } from '@material-ui/core';
 import styles from './Cards.module.css';
 import {Line} from 'react-chartjs-2';
 
@@ -21,14 +21,14 @@ const Cards = ({weather, foreCast}) =>{
                             <Grid item className={styles.item} xs={12}  md={2} key={i} >
                                 <Card className={styles.cardStyle} variant="elevation">
                                 <Typography className={styles.title}>  {daysOfWeek[(day+i)>6 ? ((day+i)-7):(day+i)]} </Typography>
-                                    <Typography variant="h5"  className={styles.grades}> {String(weeky.max).slice(0,2)} °C </Typography>
-                                    <Typography variant="body1" className={styles.grades}> {String(weeky.min).slice(0,2)}  °C</Typography>
+                                    <Typography   className={styles.grades}> {String(weeky.max).slice(0,2)} °C </Typography>
+                                    <Typography  className={styles.grades}> {String(weeky.min).slice(0,2)}  °C</Typography>
                                     <CardMedia
                                         className={styles.media}
                                         image={`http://openweathermap.org/img/w/${weeky.icon}.png`}
                                         title=""
                                     />  
-                                    <Typography variant="caption" className={styles.grades}> {weeky.desc}</Typography>
+                                    <Typography  className={styles.grades}> {weeky.desc}</Typography>
                                 </Card>
                             </Grid>
                             ) 

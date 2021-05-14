@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react';
 import TextField from '@material-ui/core/TextField';
-import { Button, Card, CardContent, CardHeader, Container, Typography, Grid, CardMedia, FormControl } from '@material-ui/core';
+import { Button, Container, Typography, Grid } from '@material-ui/core';
 import Brightness2Icon from '@material-ui/icons/Brightness2';
 import BrightnessHighIcon from '@material-ui/icons/BrightnessHigh';
 import ReactAnimatedWeather from 'react-animated-weather';
@@ -31,7 +31,7 @@ const {segment} = useSpeechContext();
         }
         useEffect(()=>{
             if(segment){
-                if(segment.intent.intent === 'weather_in' && segment.entities.[0] !== undefined && segment.isFinal   ){
+                if(segment.intent.intent === 'weather_in' && segment.entities.[0] !== undefined && segment.isFinal){
                     storm(segment.entities.[0].value);    
                 } else{
                     console.log('try again');
@@ -39,13 +39,13 @@ const {segment} = useSpeechContext();
             }
         },[segment])
         const displayWeather = 
-            <Grid xs={9}  className={styles.root} >
+            <Grid className={styles.root} >
                       
                      <Grid item  xs={12} md={3}>
-                        <Typography className={styles.cardTitle} variant="h6">{weather.name} <Typography variant="body1">{weather.country}</Typography><Typography variant="h6"> {weather.description}</Typography></Typography>
+                        <Typography className={styles.cardTitle}>{weather.name} <Typography >{weather.country}</Typography><Typography> {weather.description}</Typography></Typography>
                     </Grid> 
                     <Grid item xs={12} md={3} className={styles.icons}> 
-                        <Typography variant="h5"> <CountUp end={Number(weather.temp)} decimals={1} duration={6} /> °C</Typography>
+                        <Typography > <CountUp end={Number(weather.temp)} decimals={1} duration={6} /> °C</Typography>
                         <ReactAnimatedWeather
                                 icon={weather.icon}
                                 color={weather.color}
@@ -74,11 +74,11 @@ const {segment} = useSpeechContext();
             </Typography>
         return(
             <div>
-                <Container  >
+                <Container >
                 <Typography variant="h5" className={styles.title}>Get the current weather on any city</Typography>
-                   <Typography className={styles.title}>
+                   <div className={styles.title}>
                             {words}    
-                   </Typography>
+                   </div>
                    <form id="form" className={styles.form} onSubmit={handleSubmit} >
                     
                     <TextField  required onChange={handleChange} className={styles.outlinedRoot}  

@@ -36,12 +36,6 @@ storm  =  async (name) => {
     } else{
       alert('error city not found, please type the name correctly');
     }
-    //-----------------------  
-   /* this.setState({weather: location});
-      const weekly = await fetchWeeklyData(this.state.weather.lat,this.state.weather.lon);
-      this.setState({foreCast:weekly});      
-      const timeCalc = handleTime(this.state.weather.sunrise,this.state.weather.timeZone,this.state.weather.sunset,this.state.weather.lt,this.state.weather.main, this.state.weather)
-      this.setState({weather: timeCalc})*/
     }
   render() {
     const { weather, foreCast } = this.state;

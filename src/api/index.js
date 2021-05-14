@@ -24,7 +24,7 @@ export const fetchData = async () => {
                 lon:lon,
                 
             }
-     console.log(await  axios.get(url))
+    // console.log(await  axios.get(url))
         return simplifiedData;
         } catch(error){
         console.log(error);
