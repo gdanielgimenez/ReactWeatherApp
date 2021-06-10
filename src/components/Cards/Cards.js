@@ -10,8 +10,8 @@ const Cards = ({weather, foreCast}) =>{
   const handleClick = () =>{
       setIsFlipped(!isFlipped);
         }
-        
         let day = weather.localDay+1;
+        
         //console.log(foreCast.hourlyData)
         let daysOfWeek = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         const foreCastCards = (

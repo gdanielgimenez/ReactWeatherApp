@@ -7,12 +7,12 @@ import  styles from './App.module.css';
 import {PushToTalkButton, PushToTalkButtonContainer,ErrorPanel} from '@speechly/react-ui'
 
 class App extends Component{
-  state = {
+  state =  {
   weather:{
     name:'',temp:'', max:'', min:'', humidity:'', description:'',main:'',country:'',sunrise:'',sunset:'',lt:new Date(),timeZone:'',defaults:''
     },
    // foreCast:[{dataWeek:[''], hourly:['']}]
-  }
+}
   async componentDidMount() {
       const res = await fetchData();
       this.setState({weather: res});
