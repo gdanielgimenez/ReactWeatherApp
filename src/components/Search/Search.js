@@ -73,7 +73,7 @@ const {segment} = useSpeechContext();
                 )} 
             </Typography>
         return(
-            <div>
+            <div >
                 <Container >
                 <Typography variant="h5" className={styles.title}>Get the current weather on any city</Typography>
                    <div className={styles.title}>
@@ -94,7 +94,7 @@ const {segment} = useSpeechContext();
                         </form>
                     </Container>
 
-                <div> 
+                <div > 
                     {displayWeather}
                 </div>
             </div>

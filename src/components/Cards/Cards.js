@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import ReactCardFlip from 'react-card-flip';
-import { Card, Typography, Grid, CardMedia } from '@material-ui/core';
+import { Card, Typography, Grid, CardMedia,Container } from '@material-ui/core';
 import styles from './Cards.module.css';
 import {Line} from 'react-chartjs-2';
 
@@ -53,19 +53,19 @@ const Cards = ({weather, foreCast}) =>{
          />
 
     return (
-        <ReactCardFlip  isFlipped={isFlipped} flipSpeedFrontToBack={2} flipSeedBackToFront={2} flipDirection="horizontal">
+        <Container>
             <div className={styles.App} >
-                    < Grid title="click to get hourly temperature" className={styles.gridCont} container spacing ={2} onClick={handleClick} >              
+                    < Grid title="weekly forecast" className={styles.gridCont} container spacing ={2} >              
                         {foreCastCards}
                     </Grid>
             </div>
-            <div onClick={handleClick}  >
-                <Grid title="click to get week forecast" className={styles.gridChart}>
+            <div className={styles.App}>
+                <Grid className={styles.gridChart}>
                     {Chart}
                 </Grid>
             </div>
         
-        </ReactCardFlip>
+        </Container>
     )
 }
 export default Cards;
